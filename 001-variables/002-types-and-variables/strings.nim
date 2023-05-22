@@ -12,3 +12,12 @@ echo(msg)
 
 msg = a & " " & b
 echo(msg)
+
+var msg2 = a
+add(msg2, b)
+echo(msg2)
+
+let path = r"C:\Users"
+echo(path)
+
+echo(4 div 2)
