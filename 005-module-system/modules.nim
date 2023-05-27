@@ -1,6 +1,10 @@
 import myFirstModule # importing other modules
 import addSeq
 import strutils
+import math
+import random
+import algorithm
+import module1, module2
 
 sayHello("Allan")
 sayHello("Jon")
@@ -26,3 +30,32 @@ echo b.split('-')
 
 echo a.toLower()
 echo a.toUpper()
+
+# math module
+
+echo sin(degToRad(90.0))
+echo cos(degToRad(180.0))
+echo sqrt(16.0)
+echo tan(degToRad(90.0))
+
+# random module
+
+randomize()
+echo rand(100)
+echo rand(2.2)
+
+# algorithm module
+
+var seq1 = @[9, 8, 4, 5]
+
+seq1.sort()
+
+echo seq1
+
+# same name different files proc
+
+module1.somethingUseful()
+module2.somethingUseful()
+
+echo multiply(3, 4)
+echo multiply(3.5, 4.2)
