@@ -1,12 +1,28 @@
+import strutils
 
 proc add*(a : float, b : float) : float = 
     return a + b
 
-echo "Enter first number: "
-var a = stdin.readLine()
-echo "Enter second number: "
-var b = stdin.readLine()
+proc notNumberException*() : string {.discardable.} =
+    return "please always type a number"
 
-echo add(a, b)
+var keepPlaying = true
 
-a = stdin.readLine()
+when isMainModule:
+    while keepPlaying:
+        try:
+            echo "Enter first number: "
+            var a = stdin.readLine().parseFloat()
+            echo "Enter second number: "
+            var b = stdin.readLine().parseFloat()
+
+            echo add(a, b) #
+
+            echo "type zero to exit, or any other number to keep playing"
+            a = stdin.readLine().parseFloat()
+            if(a == 0):
+                keepPlaying = false
+            else:
+                continue
+        except:
+            echo notNumberException()
